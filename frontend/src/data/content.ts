@@ -1,0 +1,168 @@
+import type { PortfolioContent } from '../types/content';
+
+/**
+ * Portfolio content — sourced verbatim from
+ * backend/src/main/resources/content.json.
+ *
+ * Embedded as a typed module so the site is fully static and deployable
+ * without a backend.
+ */
+export const content: PortfolioContent = {
+  about: {
+    name: 'Arush Ugal',
+    title: 'Backend Software Engineer',
+    location: 'Tempe, AZ',
+    summary:
+      'Backend software engineer specializing in REST API design and distributed systems. I build high-throughput, low-latency backend infrastructure for core financial transaction pipelines and payment systems, applying concurrency and fault-tolerant patterns to keep services fast and reliable at scale. I care about clean service boundaries, resilient architectures, and APIs that stay performant for millions of daily users.',
+    links: {
+      github: 'https://github.com/ARUSHUGAL',
+      linkedin: 'https://www.linkedin.com/in/arush-ugal-b1a8a625a/',
+      email: 'arushugal@gmail.com',
+    },
+  },
+  experience: [
+    {
+      id: 'paytm',
+      organization: 'Paytm',
+      role: 'Software Engineering Intern',
+      location: 'Noida, India',
+      startDate: '2026-07',
+      endDate: '2026-09',
+      current: false,
+      descriptionPoints: [
+        'Selected from a pool of 5,000+ candidates through rigorous data-structures, algorithms, and systems-design interview rounds.',
+        'Engineered high-throughput, low-latency backend infrastructure for core financial transaction pipelines, leveraging distributed systems and concurrency patterns to ensure fault tolerance under heavy load.',
+        'Optimized payment gateway REST APIs for sub-second execution and horizontal scalability, sustaining reliable performance for millions of daily active users.',
+      ],
+    },
+  ],
+  projects: [
+    {
+      id: 'hiremenow',
+      title: 'HireMeNow — AI Recruitment Platform',
+      technologies: [
+        'React 18',
+        'TypeScript',
+        'Node.js',
+        'Express',
+        'Firebase',
+        'Socket.io',
+        'Twilio',
+      ],
+      descriptionPoints: [
+        'Designed, built, and deployed a production SaaS platform using React 18 + TypeScript, a Node.js/Express backend, and Firebase Firestore, hosted on Vercel and Railway.',
+        'Built an AI-powered resume parsing engine that automatically extracts 40+ structured attributes from candidate resumes.',
+        'Implemented real-time candidate matching over Socket.io with sub-second latency for live recruiter feedback.',
+        'Integrated Twilio Video for in-app interviews and Firebase Auth with Google OAuth for secure sign-in.',
+        'Established a CI/CD pipeline that sustained 99.9% uptime across production deployments.',
+      ],
+      repositoryUrl: 'https://github.com/ARUSHUGAL/hiremenow-recruitment-platform',
+    },
+    {
+      id: 'timeseries-pipeline',
+      title: 'Quantitative Time-Series Data Pipeline',
+      technologies: ['Python', 'pandas', 'NumPy', 'matplotlib', 'yfinance'],
+      descriptionPoints: [
+        'Built an automated data pipeline that ingests a decade of live market pricing data for quantitative analysis.',
+        'Developed a 3-sigma anomaly-detection engine to flag statistically significant price movements.',
+        'Packaged the workflow into a fully reproducible, containerized dashboard that regenerates end-to-end in under 60 seconds.',
+      ],
+      repositoryUrl: 'https://github.com/ARUSHUGAL/oilbrentanalysis',
+    },
+    {
+      id: 'project-spyn',
+      title: 'PROJECT SPYN — Autonomous Embedded Navigation',
+      technologies: ['MATLAB', 'Embedded Systems'],
+      descriptionPoints: [
+        'Implemented real-time embedded control fusing gyroscope and bump-sensor data across 28 iterative build cycles.',
+        'Stress-tested 8 distinct navigation models to validate autonomous pathing under varied conditions.',
+        'Led hardware-software integration across a 5-person team to deliver a working autonomous navigation system.',
+      ],
+      repositoryUrl: 'https://github.com/ARUSHUGAL/PROJECT-SPYN-GROUP5',
+    },
+  ],
+  skills: [
+    {
+      category: 'Languages',
+      skills: ['Python', 'Java', 'SQL', 'TypeScript', 'JavaScript', 'HTML/CSS'],
+    },
+    {
+      category: 'Frameworks & Libraries',
+      skills: [
+        'Spring Boot',
+        'React 18',
+        'Node.js',
+        'Express',
+        'Flask',
+        'Vite',
+        'Tailwind CSS',
+        'Socket.io',
+        'pandas',
+        'NumPy',
+        'matplotlib',
+      ],
+    },
+    {
+      category: 'Platforms & Services',
+      skills: ['Firebase', 'Twilio', 'Vercel', 'Railway', 'Git', 'VS Code', 'Tableau'],
+    },
+    {
+      category: 'Core Competencies',
+      skills: [
+        'REST API Design',
+        'Distributed Systems',
+        'Real-Time Systems',
+        'High-Throughput Architectures',
+        'Data Structures and Algorithms',
+      ],
+    },
+  ],
+  certifications: [
+    {
+      id: 'python-data',
+      title: 'Python and Data',
+      issuer: 'The Global Career Accelerator',
+      issueDate: '2025-12',
+      credentialId: '168741411',
+    },
+    {
+      id: 'ai-professional-skills',
+      title: 'AI Professional Skills',
+      issuer: 'The Global Career Accelerator',
+      issueDate: '2025-12',
+      credentialId: '168741415',
+    },
+    {
+      id: 'intercultural-skills',
+      title: 'Intercultural Skills',
+      issuer: 'The Global Career Accelerator',
+      issueDate: '2025-12',
+      credentialId: '168741417',
+    },
+    {
+      id: 'querying-data',
+      title: 'Querying Data',
+      issuer: 'The Global Career Accelerator',
+      issueDate: '2025-10',
+      credentialId: '163455814',
+    },
+  ],
+  education: {
+    education: [
+      {
+        institution: 'Arizona State University',
+        school: 'Ira A. Fulton Schools of Engineering',
+        degree: 'B.S. in Computer Science',
+        startDate: '2024-08',
+        endDate: '2028-05',
+        gpa: '4.0',
+        honors: ["Dean's List — Fall 2024", "Dean's List — Spring 2025"],
+      },
+    ],
+    languages: [
+      { language: 'Hindi', proficiency: 'Native' },
+      { language: 'English', proficiency: 'Professional fluency' },
+    ],
+    leadership: ['Grand Challenges Scholar Program', 'Robotics Club', 'Technocrat Society'],
+  },
+};

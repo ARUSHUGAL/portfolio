@@ -1,0 +1,36 @@
+server:
+  # Backend port (Requirement 17.3 / config). Default 8080.
+  port: ${SERVER_PORT:8080}
+
+spring:
+  application:
+    name: portfolio-backend
+  mvc:
+    # Throw NoHandlerFoundException for unknown paths so the global handler can
+    # return a 404 ApiError (Requirement 1.8).
+    throw-exception-if-no-handler-found: true
+  web:
+    resources:
+      # API-only service: disable static resource mapping so unmatched paths
+      # surface as no-handler 404s rather than a default resource lookup.
+      add-mappings: false
+
+# Environment-driven configuration (Requirements 17.1, 17.2).
+portfolio:
+  cors:
+    # Permitted Frontend_App origin (Requirement 1.9, 17.2). Default local Vite dev server.
+    allowed-origin: ${PORTFOLIO_CORS_ALLOWED_ORIGIN:http://localhost:5173}
+  contact:
+    # Spam-mitigation controls (Requirement 2.7).
+    rate-limit: ${PORTFOLIO_CONTACT_RATE_LIMIT:5}
+    rate-window-minutes: ${PORTFOLIO_CONTACT_RATE_WINDOW_MINUTES:10}
+
+# Health-check endpoint (Requirement 17.3): /actuator/health returns 200 when UP.
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: never
